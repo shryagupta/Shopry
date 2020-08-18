@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+ <style>
+body {
+  background-image:url({% static 'images/cover.jpeg' %});
+}
+</style>
+      {% for message in messages %}
+				<div class="alert alert-success alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	 <strong>{{message}}</strong>
+  </div>
+		{% endfor %}
+<!--<div class="quote">-->
+<!--	If you can't stop thinking about it...-->
+<!--	BUY IT !-->
+<!--</div>-->
+<div class = "categry">Select any category</div>
+		<div class="parent-01">
+
+			<a href="{% url 'more' name='ST' %}">
+					<img class="card" src="static/images/shirt.jpg">
+			</a>
+			<a href="{% url 'more' name='TEES' %}">
+				<img class="card" src="static/images/tshirt.jpg">
+			</a>
+			<a href="{% url 'more' name='SK' %}">
+				<img class="card" src="static/images/skirt.jpg">
+			</a>
+			<a href="{% url 'more' name='HS' %}">
+				<img class="card" src="static/images/hoodie.png">
+			</a>
+			
+		</div>
+
+
+
+{% endblock %}

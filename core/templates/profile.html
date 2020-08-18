@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<br>
+		<div class="card4">
+			<br>
+			<h1>PROFILE</h1><br>
+			<b> Name -</b>{{user.person.name}}<br><br>
+			<b> Email -</b>{{user.email}}<br><br>
+            <b> Gender -</b>{{user.person.gender}}<br><br>
+			<b> Address -</b>{{user.person.address}}<br><br>
+            <b> City -</b>{{user.person.city}}<br><br>
+            <b> Phone -</b>{{user.person.phone}}<br><br>
+			<div><a href="{% url 'editprofile' %}">
+				<button  class="but" ><b>Edit Profile</b></button><br><br>
+			</a></div>
+		</div>
+{% endblock content %}

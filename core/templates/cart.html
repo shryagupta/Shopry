@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1 class="heading1">MY CART</h1>
+
+		<div class="parent-02">
+			{% for i in ordered  %}
+				<div class="card-02">
+					<img id='img-01' src="{{i.image.url}}">
+					<div class="displ">
+						{{i.title}}<br>
+					     Total - {{i.price}}<br>
+					     No. of items - {{i.quantity}}<br>
+						 Size - {{i.size}}<br>
+					</div>
+			<a href="{% url 'delordered' pk=i.pk %}">
+				<div class="but-01">
+					Remove
+				</div>
+			</a>
+				</div>
+			{% endfor %}
+		</div>
+
+	<a href="{% url 'buyitem' %}">
+		<div class="but-02">Buy Now</div><br><br>
+	</a>
+
+{% endblock %}
+
+

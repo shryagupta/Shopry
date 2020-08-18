@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+		{% for message in messages %}
+<div class="alert alert-success alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	 <strong>{{message}}</strong>
+  </div>
+
+
+		{% endfor %}
+		<div class="parent-02">
+			{% for i in data %}
+				<div class="card-02">
+					<img id='img-01' src="{{i.image.url}}">
+					<div class="displ">
+						{{i.title}}<br>
+					    Rs {{i.price}}<br><br>
+					</div>
+					<form method="POST" >
+						{% csrf_token %}
+						Quantity<input type="number" name="quantity" required autocomplete="OFF">
+							<input type="number" value={{i.pk}}  name="pk" hidden>
+						<input type="submit" value="Add to cart" class="but-01">
+<!--					<a href="{% url 'added' pk=i.pk %}">-->
+<!--						<div class="but-01">-->
+<!--							<span id=txt-01>Add To Cart</span>-->
+<!--						</div>-->
+<!--					</a>-->
+
+
+							<select name="size">Size:
+								<option>S</option>
+								<option>M</option>
+								<option>L</option>
+								<option>XL</option>
+							</select>
+
+
+					</form>
+
+				</div>
+			{% endfor %}
+		</div>
+
+
+{% endblock %}

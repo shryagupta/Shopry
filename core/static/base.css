@@ -1,0 +1,9 @@
+.parent-01{
+	display: flex;
+color: red;
+}
+.card{
+	width: 200px;
+	height: 400px;
+	background-color: red;
+}

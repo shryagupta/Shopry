@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+ <h1 class="heading1"> ORDER SUMMARY</h1>
+         <div class="parent-02">
+			{% for i in ordered  %}
+				<div class="card-02">
+					<img id='img-01' src="{{i.image.url}}">
+					<div class="displ">
+						{{i.title}}<br>
+					     Total - {{i.price}}<br>
+					     No. of items - {{i.quantity}}<br>
+						 Size - {{i.size}}<br>
+						Address -{{user.person.address}}<br>
+                        City -{{user.person.city}}<br><br>
+					</div>
+                    </div>
+			{% endfor %}
+		</div>
+{% endblock %}

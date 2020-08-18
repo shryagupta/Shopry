@@ -1,0 +1,12 @@
+.crd{
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  box-shadow: 8px 8px 10px #aaa;
+}
+
+#img-01{
+	height: 100px;
+	width: 100px;
+}
